@@ -14,6 +14,8 @@
 
 //   N is an integer within the range[1..2, 147, 483, 647].
 
+// this solution has time complexity of O(n)
+// space complexity O(n)
 function solution(N) {
 
   let binaryNum = N.toString(2)
@@ -34,6 +36,27 @@ function solution(N) {
       return curr > accu ? curr : accu
     })
   }
+
+  return largestGap
+}
+
+//this solution is just as fast O(n)
+//better space complexity O(1)
+function solution(N) {
+  let binaryNum = N.toString(2)
+  let largestGap = 0
+  let gapLength = 0
+  
+  binaryNum.split("").forEach(num => {
+    if(num == 0) {
+      gapLength++
+    }
+
+    if (num == 1){
+      if(largestGap < gapLength) largestGap = gapLength
+      gapLength = 0
+    }
+  })
 
   return largestGap
 }
