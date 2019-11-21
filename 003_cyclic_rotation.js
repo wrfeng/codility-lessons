@@ -35,6 +35,8 @@
 // each element of array A is an integer within the range[−1, 000..1, 000].
 // In your solution, focus on correctness.The performance of your solution will not be the focus of the assessment.
 
+// time complexity O(n)
+// space complexity O(1)
 function solution(A, K) {
   if (A.length === 0) return A
   
